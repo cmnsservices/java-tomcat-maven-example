@@ -1,0 +1,35 @@
+version: 1.0
+stages:
+  stage1:
+    jobs:
+    - - antgithub
+    - - ant-build
+    - - codemine-bucket-push
+jobs:
+  antgithub:
+    description: source cloning job
+    type: source-checkout
+    timeout: 30
+    parameters:
+      service: gitlab
+      integration: gitlab_National System
+      repo: cm-ant-standalone-test
+      branch: master
+  ant-build:
+    description: build project using ant
+    type: ant
+    timeout: 30
+    parameters:
+      requiredArtifacts:
+      - antgithub
+      image: ant:latest
+      artifacts:
+      - '**/build/**/*.jar'
+      captureunittests: 'true'
+      testresultfiles: '**/TEST-*.xml'
+  codemine-bucket-push:
+    type: codemine-bucket
+    parameters: 
+      requiredArtifacts:
+      - antgithub
+      codemineBucket:  BucketTest1
