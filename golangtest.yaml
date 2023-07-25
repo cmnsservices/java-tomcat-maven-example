@@ -1,0 +1,25 @@
+version: 1.0
+stages:
+  stage1:
+    jobs:
+    - - Golanggitlab
+    - - golang-build1
+jobs:
+  Golanggitlab:
+    description: source cloning job
+    type: source-checkout
+    timeout: 30
+    parameters:
+      service: gitlab
+      integration: gitlab_National System
+      repo: cm-golang-test
+      branch: master
+  golang-build1:
+    description: build project using golang
+    type: golang
+    timeout: 30
+    parameters:
+      requiredArtifacts:
+      - Golanggitlab
+      image: golang:latest
+      command: build
