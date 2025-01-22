@@ -32,4 +32,4 @@ jobs:
     parameters: 
       requiredArtifacts:
       - antgithub
-      codemineBucket:  BucketTest11
+      codemineBucket:  BucketTest111
