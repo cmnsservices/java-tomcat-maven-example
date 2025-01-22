@@ -15,7 +15,7 @@ Sample
 
 The application will be available on `http://localhost:8080`.
 
-## How This Was Built in this project
+## How This Was Built in this project test
 
 1. Generate the project using a Maven archetype:
 
