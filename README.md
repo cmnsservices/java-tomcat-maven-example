@@ -17,7 +17,7 @@ SampleREADTEST1
 
 SampleREADTEST2
 
-SampleREADTEST
+SampleREADTEST3
 
 The application will be available on `http://localhost:8080`.
 
