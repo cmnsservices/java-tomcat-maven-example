@@ -19,6 +19,8 @@ SampleREADTEST2
 
 SampleREADTEST3
 
+SampleREADTEST4
+
 The application will be available on `http://localhost:8080`.
 
 ## How This Was Built in this project test
