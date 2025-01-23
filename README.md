@@ -13,7 +13,7 @@ java -jar target/dependency/webapp-runner.jar target/*.war
 ```
 SampleREADTEST
 
-SampleREADTEST
+SampleREADTEST1
 
 SampleREADTEST
 
