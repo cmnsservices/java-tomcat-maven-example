@@ -1,27 +1,16 @@
 version: 1.0
 stages:
-  StageOne:
+  Trial:
     jobs:
-    - - srcCheckout
-    - - cppcmaketest
+    - - custom-container
+  
 jobs:
-  srcCheckout:
-    description: ''
-    type: source-checkout
-    timeout: 30
-    priority: major
-    parameters:
-      branch: master
-  cppcmaketest:
-    description: ''
-    type: cpp-cmake
-    timeout: 30
-    priority: major
-    parameters:
-      image: cpp-cmake:latest
-      scripts:
-      - make --version
-      - cmake .
-      - make
-      requiredArtifacts:
-      - srcCheckout
+  custom-container:
+   type: custom-container
+   parameters:
+     scripts: 
+     - touch temp.txt
+     captureArtifacts:
+     - temp.txt
+     image: aws-cli-v1:latest
+     
