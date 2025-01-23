@@ -4,7 +4,7 @@ stages:
     jobs:
     - - antgithub
     - - ant-build
-    - - codemine-bucket-push
+    
 jobs:
   antgithub:
     description: source cloning job
@@ -27,9 +27,4 @@ jobs:
       - '**/build/**/*.jar'
       captureunittests: 'true'
       testresultfiles: '**/TEST-*.xml'
-  codemine-bucket-push:
-    type: codemine-bucket
-    parameters: 
-      requiredArtifacts:
-      - antgithub
-      codemineBucket:  BucketTest111
+  
