@@ -11,7 +11,7 @@ mvn packageskdjfnvljksdnvljksdnvkls
 mvn package
 java -jar target/dependency/webapp-runner.jar target/*.war
 ```
-Sample
+SampleREADTEST
 
 The application will be available on `http://localhost:8080`.
 
